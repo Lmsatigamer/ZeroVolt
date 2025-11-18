@@ -2,7 +2,10 @@ import Header from '@/components/Header';
 import ProductGrid from '@/components/ProductGrid';
 
 async function getProducts() {
-  const { data: products, error } = await supabase
+  const products = [
+  { id: 1, name: 'Product 1', price: 100 },
+  { id: 2, name: 'Product 2', price: 150 },
+];
     .from('products')
     .select('*')
     .eq('is_active', true)
